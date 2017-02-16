@@ -201,6 +201,7 @@
                               <li class="active"><a href="" data-toggle="tab" data-target="#hardware">Hardware specification</a></li>
                               <li><a href="" data-toggle="tab" data-target="#comments" ng-click="showComments()">Comments</a></li>
                               <li><a href="" data-toggle="tab" data-target="#mytasks" ng-click="showTasks()">My tasks</a></li>
+                              <li><a href="" data-toggle="tab" data-target="#milestones" ng-click="showMilestones()">Milestones</a></li>
                             </ul>
 
                             <div id="my-tab-content" class="tab-content">
@@ -212,6 +213,9 @@
                                 </div>
                                 <div class="tab-pane" id="mytasks">
                                     <div ng-include ="'modules/order/views/show-tasks.html'"></div>
+                                </div>
+                                <div class="tab-pane" id="milestones">
+                                    <div ng-bind-html ="jBPM_milestones"></div>
                                 </div>
                             </div>
                         </div>

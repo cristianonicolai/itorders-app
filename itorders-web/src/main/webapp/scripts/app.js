@@ -11,6 +11,7 @@ angular.module('Manager', []);
 angular.module('OrderITApplication', [
     'ngRoute',
     'ngCookies',
+    'ngSanitize',
     'Authentication',
     'Home',
     'Cases',

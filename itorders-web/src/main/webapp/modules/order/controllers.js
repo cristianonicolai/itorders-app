@@ -371,6 +371,24 @@ angular.module('Orders')
                     });
                 };
 
+                $scope.showMilestones = function() {
+
+                    var m = new org.jbpm.wb.CaseMilestone();
+                    m.kieServerURL = appConfig.get('kieserver_url');
+                    m.containerId = 'itorders';
+                    m.caseId = $scope.order['case-id'];
+                    console.log("kieServerURL: " + m.kieServerURL);
+                    console.log("caseId: " + m.caseId);
+                    console.log("containerId: " + m.containerId);
+                    m.refresh(function (response){
+                        console.log('response: ' + response);
+                        $scope.jBPM_milestones = response;
+                    });
+                    console.log('m: ' + m);
+                    // console.log('m element: ' + m.getElement());
+                    // console.log('m outer: ' + m.getElement().getOuterHTML());
+                    // $scope.jBPM_milestones = m.getElement();
+                };
                
                 $scope.prevPage = function() {
                     $scope.page = $scope.page - 1;
